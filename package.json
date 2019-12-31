@@ -1,0 +1,15 @@
+{
+  "name": "autologinnode",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "nodemon": "^2.0.2",
+    "querystring": "^0.2.0",
+    "request": "^2.88.0",
+    "request-to-curl": "^0.1.5"
+  },
+  "scripts": {
+    "start": "nodemon ."
+  }
+}
