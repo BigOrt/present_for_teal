@@ -1,9 +1,28 @@
 const fs = require("fs");
 
-const filepath = 'root/userlists.txt';
-const datasteram = fs.readFileSync(filepath, 'utf8');
+const filepath = "root/userlists.txt";
+const datastream = fs.readFileSync(filepath, "utf8");
+const stringSplit = datastream.trim().split("-");
 
-console.log(JSON.stringify(datasteram));
+const initialObject = {
+  user: "",
+  pass: ""
+};
+
+const getArrayFix = () => {
+  const filterspace = stringSplit.map((values, index) => {
+    if (values.length > 15) {
+      const removeSpace = values
+        .trim().split("-").toString();
+      return removeSpace;
+    }
+    return values;
+  });
+  return filterspace;
+};
+
+console.table(getArrayFix());
+console.log(getArrayFix());
 // var request = require('request');
 // var http = require('querystring');
 // require('request-to-curl');
